@@ -1,0 +1,41 @@
+given:
+17  16  15  14  13
+18   5   4   3  12
+19   6   1   2  11
+20   7   8   9  10
+21  22  23  24  25
+
+going nw:
+starting n=0
+(2n)^2 + 1 = 4n^2 + 1
+
+going se:
+(2n + 1) ^ 2
+4n^2 + 4n + 1
+
+layer:
+0: 1
+1: 2-9
+2: 10-25
+
+max: sqrt, -1, /2
+min: -1, sqrt, 
+eh, that's hard. 
+
+
+take layer, last item, subtract item
+diffs, mod layer_length (layer*2)
+0  1  2  3  0
+3  0  1  0  1
+2  1  0  1  2
+1  0  1  0  3
+0  3  2  1  0
+
+we want...
+0  1  2  1  0
+1  0  1  0  1
+2  1  0  1  2
+1  0  1  0  1
+0  3  2  1  0
+
+min(diff % layer_length, -diff % layer_length)
